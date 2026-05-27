@@ -1,57 +1,384 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>My Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evelyn Chunyu Li | Personal Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    body{
-      font-family: Arial;
-      background:#f5f5f5;
-      text-align:center;
-      padding-top:100px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    h1{
-      color:#333;
-      font-size:50px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    p{
-      color:#666;
-      font-size:20px;
+    body {
+      background: #e9dfd2;
+      color: #2b2b2b;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
     }
 
-    img{
-      width:180px;
-      border-radius:50%;
-      margin-bottom:20px;
+    section {
+      padding: 120px 12%;
     }
 
-    .card{
-      background:white;
-      width:500px;
-      margin:auto;
-      padding:40px;
-      border-radius:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      letter-spacing: -1px;
     }
+
+    p {
+      line-height: 1.9;
+      color: #555;
+      font-size: 17px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 82px;
+      margin-bottom: 25px;
+      line-height: 1;
+    }
+
+    .hero-text h3 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 35px;
+      color: #6d6257;
+    }
+
+    .hero-text p {
+      max-width: 620px;
+      margin-bottom: 40px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 420px;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      padding: 30px 12%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      backdrop-filter: blur(20px);
+      background: rgba(233, 223, 210, 0.75);
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #444;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: black;
+    }
+
+    /* SECTION */
+
+    .section-title {
+      font-size: 52px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(255,255,255,0.35);
+      padding: 50px;
+      border-radius: 35px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 40px;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid #bba996;
+      padding-left: 25px;
+    }
+
+    .timeline-item h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #2c2c2c;
+    }
+
+    .timeline-item span {
+      color: #7b6f63;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 80px 12%;
+      text-align: center;
+      color: #6f665c;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width: 1000px) {
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+      }
+
+      .hero-text h1 {
+        font-size: 58px;
+      }
+
+      .hero-image img {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav ul {
+        gap: 20px;
+      }
+
+      section {
+        padding: 100px 8%;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-<div class="card">
+  <!-- NAVIGATION -->
 
-  <img src="https://via.placeholder.com/180">
+  <nav>
+    <div class="logo">Evelyn Li</div>
 
-  <h1>Evelyn Li</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#interpreting">Interpreting</a></li>
+    </ul>
+  </nav>
 
-  <p>Welcome to my personal website</p>
+  <!-- HERO -->
 
-  <p>I am learning GitHub Pages 🚀</p>
+  <section class="hero">
 
-</div>
+    <div class="hero-text">
+
+      <h1>Evelyn Chunyu Li 李春钰</h1>
+
+      <h3>Chinese-Spanish Interpreter | Predoctoral Investigator at Universitat Pompeu Fabra</h3>
+
+      <p>
+        C2 proficiency in Spanish and C1 proficiency in English.<br><br>
+
+        Native speaker of Mandarin and Cantonese Chinese.<br><br>
+
+        Specialized in simultaneous and consecutive interpreting across
+        different professional contexts.<br><br>
+
+        Research interests include medical terminology, neology,
+        corpus linguistics, and specialized interpreting studies.
+</p>
+
+    </div>
+
+    <div class="hero-image">
+
+      <!-- REPLACE THIS IMAGE -->
+      <img src="your-photo.jpg" alt="Evelyn Li">
+
+    </div>
+
+  </section>
+
+  <!-- PERSONAL STATEMENT -->
+
+  <section id="about">
+
+    <h2 class="section-title">Personal Statement</h2>
+
+    <div class="card">
+
+      <h3>About Me</h3>
+
+      <p>
+       I'm a Ph.D. student in Translation and Language Sciences at Universitat Pompeu Fabra,
+       supported by a CSC scholarship, and a researcher at IULATERM (Institute for Applied Linguistics - Lexicon and Technology).
+       I also work as a freelance translator and interpreter in Shenzhen, China.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <h2 class="section-title">Education</h2>
+
+    <div class="card timeline">
+
+      <div class="timeline-item">
+
+        <h4>Renewable Energy Studies</h4>
+
+        <span>Current</span>
+
+        <p>
+          Focused on sustainable energy systems, renewable technologies,
+          environmental efficiency, and future-oriented infrastructure.
+        </p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <h4>Water Treatment Systems (EDAR & ETAP)</h4>
+
+        <span>Completed Vocational Training</span>
+
+        <p>
+          Specialized in wastewater treatment systems, water purification
+          processes, and environmental management technologies.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INTERPRETING -->
+
+  <section id="interpreting">
+
+    <h2 class="section-title">Interpreting Experience</h2>
+
+    <div class="card timeline">
+
+      <div class="timeline-item">
+
+        <h4>Cross-Cultural Communication</h4>
+
+        <span>International Business Contexts</span>
+
+        <p>
+          Assisted communication between multilingual teams and international
+          partners, supporting clearer understanding across cultural and
+          linguistic environments.
+        </p>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <h4>Business Interpretation</h4>
+
+        <span>Chinese · English · Spanish</span>
+
+        <p>
+          Participated in translation and interpretation tasks involving
+          international cooperation, product communication, and client support.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Evelyn Chunyu Li
+
+  </footer>
 
 </body>
+
 </html>
